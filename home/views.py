@@ -8,7 +8,7 @@ from home.demo import *
 apis=FirebaseStorage.objects.all()[len(FirebaseStorage.objects.all())-1]
 config={"apiKey":apis.apiKey,"authDomain": apis.authDomain,"databaseURL": apis.databaseURL,"storageBucket": apis.storageBucket}
 # Create your views here.
-@csrf_protect
+
 def home(request):
     return render(request, 'index.html')
 
