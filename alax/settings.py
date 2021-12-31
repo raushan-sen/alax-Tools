@@ -15,7 +15,6 @@ SECRET_KEY = 'django-insecure-a5t3e@mozgj8+^!kfl#0a7f_iw4)9@tq@t9x0i$5#x@@t2#62!
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['https://alaxttt.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = ['alaxttt.herokuapp.com']
 
 # Application definition
@@ -110,6 +109,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 #STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 STATIC_ROOT = BASE_DIR / 'static'
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
