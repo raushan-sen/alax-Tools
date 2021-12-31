@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from home.models import *
-from django.views.decorators.csrf import csrf_exempt,csrf_protect
 import random
 import pyrebase
 from home.demo import *
@@ -12,7 +11,6 @@ config={"apiKey":apis.apiKey,"authDomain": apis.authDomain,"databaseURL": apis.d
 def home(request):
     return render(request, 'index.html')
 
-@csrf_protect
 def mcq(request):
     if request.method=='POST':
         Title=request.POST.get('title')
@@ -44,7 +42,6 @@ def mcq(request):
 
     return render(request, 'mcq.html')
 
-@csrf_protect
 def uploads(request):
     if request.method=='POST':
         Filex=request.FILES['our-file']
