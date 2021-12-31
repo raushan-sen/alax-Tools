@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="quizes">
+        <h1>Created Your Code Just Copy It And Enjoy.</h1>
+            <b>Title</b><br>
+            <input type="text" id='title' value="{{title}}"><br>
+            <b>Content</b><br>
+            <textarea name="content" id="content" cols="30" class='copycontent' rows="10" placeholder="Content Here......">{{All_full_content}}</textarea><br>
+            <b>Image Link</b><br>
+            <input type="text" id='title' value="{{image_url}}"><br><br>
+            <p class="copy-content">Copy Content</p>
+            </div>
+</div>
+{% endblock content %}
+{% block active4 %}active{% endblock active4 %}

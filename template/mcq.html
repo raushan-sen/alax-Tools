@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="quizes">
+    {% comment %} <center> {% endcomment %}
+        <h1>Mcqs Creator</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <b>Title</b><br>
+            <input type="text" name="title" id="title" placeholder="Title Here..."><br>
+            <b>Content</b><br>
+            <textarea name="content" id="content" cols="30" rows="10" placeholder="Content Here......"></textarea><br>
+            <input type="file" name="feature-image" id="files"><br>
+            <div class="category">
+                <input type="checkbox" name="simple-mcq" id="simple-mcq"><label for="simple-mcq">Simple</label>
+                <input type="checkbox" name="case-based-mcq" id="case-based-mcq"><label for="case-based-mcq">Case
+                    Based</label>
+                <input type="checkbox" name="image-base-mcq" id="image-base-mcq"><label for="image-base-mcq">Image
+                    Based</label><br>
+                <p class="normal-container">Create</p>
+            </div>
+            <div class="content-mcq">
+                <textarea name="my-quiz-content" class='my-quiz-content' style="padding: 5px;margin-top: -47px; font-size: 20px;width: 90%;border: none; background: transparent;" id="content-mcqf" cols="30" rows="10" placeholder="Content Here......"></textarea><br>
+
+
+            </div>
+
+            <button type="submit" class="form-btn">Create Now</button>
+        </form>
+        {% comment %}
+    </center> {% endcomment %}
+
+</div>
+{% endblock content %}
+{% block active4 %}active{% endblock active4 %}

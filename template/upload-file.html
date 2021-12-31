@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="upload-content">
+    <div class="upload-file">
+        <h1 class="upload-file-text">Uploads</h1>
+        <div class="button"> Click Here To Upload File </div>
+        <div class="file-upload">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+            <input type="file" name="our-file" id="our-file"><button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+    <div class="uploaded-contents">
+        <h1 class="uploaded-text">Uploaded Content</h1>
+        <div class="uploaded-files">
+            <div class="upload-list">
+                {% for file in files %}
+                <div class="All-lists">
+                    <b class="text"># {{file.FileName}}</b><a id='{{file.File_link}}' class="link-copy">Copy</a><a href='filelinkdelete/{{file.File_link}}' class="img-delete">Delete</a><a href='{{file.File_link}}' class="img-download" download>Download</a>
+                </div>
+                {% endfor %}
+                <div class="next-pres">
+                    <a href="#">Prev</a> | <a href="#">Next</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock content %}
