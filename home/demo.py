@@ -25,7 +25,7 @@ def for_simple(contentent,Focus_keyword):
             option_C=s[3]
             option_D=s[4]
             Correct_option=s[5] # correct option
-            questions.append(f'<br> <h3>{Question}</h3><p><b>(A)</b> {option_A}<br/><b>(B)</b> {option_B}<br/><b>(C)</b> {option_C}<br/><b>(D)</b> {option_D}<br/></p><button class="questionnsxs{questionns}" onclick="me(\'{Correct_option}\',\'questionns{questionns}\')" style="border: none; background-color: rgb(0, 0, 0);color: rgb(255, 255, 255);">Click Me </button><br/>')
+            questions.append(f'<br> <h3>{Question}</h3><p><b>(A)</b> {option_A}<br/><b>(B)</b> {option_B}<br/><b>(C)</b> {option_C}<br/><b>(D)</b> {option_D}<br/></p><button class="questionnsxr{questionns}" onclick="me(\'{Correct_option}\',\'questionnsxr{questionns}\')" style="border: none; background-color: rgb(0, 0, 0);color: rgb(255, 255, 255);">Click Me </button><br/>')
     return Heading_For_Simple_Mcqs+''.join(questions)
 
 # for case based mcqs
@@ -50,7 +50,7 @@ def for_case_based(contentent,Focus_keyword):
             option_C=s[4] # options C
             option_D=s[5] # options D
             Correct_option=s[6] # correct option
-            questions.append(f'<br> <p>{Small_paragraph}</p><h3>{Question}</h3><p><b>(A)</b> {option_A}<br/><b>(B)</b> {option_B}<br/><b>(C)</b> {option_C}<br/><b>(D)</b> {option_D}<br/></p><button class="questionnsx{questionns}" onclick="me(\'{Correct_option}\',\'questionns{questionns}\')" style="border: none; background-color: rgb(0, 0, 0);color: rgb(255, 255, 255);">Click Me </button><br/>')
+            questions.append(f'<br> <p>{Small_paragraph}</p><h3>{Question}</h3><p><b>(A)</b> {option_A}<br/><b>(B)</b> {option_B}<br/><b>(C)</b> {option_C}<br/><b>(D)</b> {option_D}<br/></p><button class="questionnsx{questionns}" onclick="me(\'{Correct_option}\',\'questionnsxs{questionns}\')" style="border: none; background-color: rgb(0, 0, 0);color: rgb(255, 255, 255);">Click Me </button><br/>')
 
     return Heading_For_Simple_Mcqs+''.join(questions)
 
@@ -75,7 +75,7 @@ def for_image_based(contentent,Focus_Related_keyword,Focus_keyword):
             option_C=s[4]# options C
             option_D=s[5]# options D
             Correct_option=s[6]# correct option
-            questions.append(f'<br><img src="{Image_link}" alt="{Focus_Related_keyword}"><h3>{Question}</h3><p><b>(A)</b> {option_A}<br/><b>(B)</b> {option_B}<br/><b>(C)</b> {option_C}<br/><b>(D)</b> {option_D}<br/></p><button class="questionns{questionns}" onclick="me(\'{Correct_option}\',\'questionns{questionns}\')" style="border: none; background-color: rgb(0, 0, 0);color: rgb(255, 255, 255);">Click Me </button><br/>')
+            questions.append(f'<br><img src="{Image_link}" alt="{Focus_Related_keyword}"><h3>{Question}</h3><p><b>(A)</b> {option_A}<br/><b>(B)</b> {option_B}<br/><b>(C)</b> {option_C}<br/><b>(D)</b> {option_D}<br/></p><button class="questionnsx{questionns}" onclick="me(\'{Correct_option}\',\'questionnsx{questionns}\')" style="border: none; background-color: rgb(0, 0, 0);color: rgb(255, 255, 255);">Click Me </button><br/>')
     
     return Heading_For_Simple_Mcqs+''.join(questions)
 
@@ -97,5 +97,5 @@ def full_bhi_content(extra_contentent,contentent,simple,case,imagebased,image_li
     elif imagebased=='on':
         quiz_code=for_image_based(contentent,Focus_Related_keyword,Focus_keyword)
     
-    Full_content=f'<img src="{image_link}" alt="{Focus_Related_keyword}"><br/><b>{Focus_keyword}</b> :{Short_Description}<br/>{quiz_code}<br/><h2> Final Words :<h2><p>{Final_Words}</p><br/>{Internal_link}<br>{jscode}'
+    Full_content=f'<img src="{image_link}" alt="{Focus_Related_keyword}"><br/><b>{Focus_keyword}</b> :{Short_Description}<br/>{quiz_code}<br/><h2> Final Words :</h2><p>{Final_Words}</p><br/>{Internal_link}<br>{jscode}'
     return Full_content
